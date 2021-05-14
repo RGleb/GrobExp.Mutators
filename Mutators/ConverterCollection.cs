@@ -73,6 +73,11 @@ namespace GrobExp.Mutators
             return mutatorsTree?.MigratePaths<TSource>(GetOrCreateHashtableSlot(context).ConverterTree);
         }
 
+        internal ModelConfigurationNode GetConverterTree(MutatorsContext context)
+        {
+            return GetOrCreateHashtableSlot(context).ConverterTree;
+        }
+
         protected abstract void Configure(MutatorsContext context, ConverterConfigurator<TSource, TDest> configurator);
 
         protected virtual void BeforeConvert(TSource source)
